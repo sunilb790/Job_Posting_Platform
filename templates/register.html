@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="columns">
+        <div class="column is-6 is-offset-3">
+            <h1 class="title">Register</h1>
+         <form method="post" action=".">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <hr>
+            <div class="field">
+                <label >Account Type</label>
+                <div class="control">
+                    <div class="select">
+                        <select name="account_type">
+                            <option value="jopseeker">Jop Seeker</option>
+                            <option value="employer">Employer</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-success">Register</button>
+                </div>
+            </div>
+         </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

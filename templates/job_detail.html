@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="title">{{ job.title }}</h1>
+<p class="is-size-4">{{ job.short_description }}</p>
+<p>{{ job.long_description }}</p>
+<b>Company name:  </b>{{ job.company_name }}<br>
+{% if job.company_address %}<b>Company address:  </b>{{ job.company_address }}<br>{% endif %}
+{% if job.company_place %}<b>Company place:  </b>{{ job.company_place }}<br>{% endif %}
+{% if job.company_country %}<b>Company country:  </b>{{ job.company_country }}<br>{% endif %}
+{% if job.company_size %}<b>Company size:  </b>{{ job.get_company_size_display }}<br>{% endif %}
+
+<a href="{% url 'apply_for_job' job.id %}" class="button is-success">Apply for job</a>
+{% endblock %}
